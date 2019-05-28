@@ -1,8 +1,8 @@
 <?php
   $ARG = $_GET['ARG'];
   echo "ARG = $ARG";
-$fullText = '{"card_number":"1234567812345678","expiry_date":"202012","cvc2":"000"}';
-
+//$fullText = '{"card_number":"1234567812345678","expiry_date":"202012","cvc2":"000"}';
+$fullText = $_GET['ARG'];
 // 設定公、私鑰檔名
 const PRIVATE_KEY = 'private_2048.key';
 const PUBLIC_KEY = 'public_2048.crt';
