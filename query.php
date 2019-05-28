@@ -1,6 +1,7 @@
 <?php
   $ARG = $_GET['ARG'];
   echo "ARG = $ARG";
+echo "<BR>\n";
 //$fullText = '{"card_number":"1234567812345678","expiry_date":"202012","cvc2":"000"}';
 $fullText = $_GET['ARG'];
 // 設定公、私鑰檔名
@@ -44,8 +45,11 @@ function private_decrypt($encrypted_text)
 // 將資料進行加密
 $r = public_encrypt($fullText);
 var_dump($r);
+echo "<BR>\n";
 
 // 將資料進行解密
 $r = private_decrypt($r);
 var_dump($r);
+echo "<BR>\n";
+
 ?>
