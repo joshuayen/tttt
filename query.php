@@ -47,16 +47,16 @@ $t1=microtime(true);
 for($i=0;$i<10;$i++){
   $r[$i]=public_encrypt($i.$fullText);
   #$r = public_encrypt($fullText);
-  #var_dump($r);
-  #echo "<BR>\n";
+  var_dump($r[$i]);
+  echo "<BR>\n";
 }
 
 $t2=microtime(true);
 // 將資料進行解密
 for($i=0;$i<10;$i++){
   $rr[$i] = private_decrypt($r[$i]);
-  #var_dump($r);
-  #echo "<BR>\n";
+  var_dump($rr[$i]);
+  echo "<BR>\n";
 }
 
 $t3=microtime(true);
