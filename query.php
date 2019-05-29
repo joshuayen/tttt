@@ -44,15 +44,20 @@ function private_decrypt($encrypted_text)
 
 $t1=microtime(true);
 // 將資料進行加密
-$r = public_encrypt($fullText);
-var_dump($r);
-echo "<BR>\n";
+for($i=0;$i<10;$i++){
+  $r[$i]=public_encrypt($i.$fullText);
+  #$r = public_encrypt($fullText);
+  #var_dump($r);
+  #echo "<BR>\n";
+}
 
 $t2=microtime(true);
 // 將資料進行解密
-$r = private_decrypt($r);
-var_dump($r);
-echo "<BR>\n";
+for($i=0;$i<10;$i++){
+  $rr[$i] = private_decrypt($r[$i]);
+  #var_dump($r);
+  #echo "<BR>\n";
+}
 
 $t3=microtime(true);
 echo $t2-$t1 . "sec<BR>\n";
