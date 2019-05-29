@@ -42,14 +42,19 @@ function private_decrypt($encrypted_text)
     return $decrypted;
 }
 
+$t1=microtime(true);
 // 將資料進行加密
 $r = public_encrypt($fullText);
 var_dump($r);
 echo "<BR>\n";
 
+$t2=microtime(true);
 // 將資料進行解密
 $r = private_decrypt($r);
 var_dump($r);
 echo "<BR>\n";
 
+$t3=microtime(true);
+echo $t2-$t1 . "sec<BR>\n";
+echo $t3-$t2 . "sec<BR>\n";
 ?>
