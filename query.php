@@ -63,4 +63,8 @@ for($i=0;$i<$ss;$i++){
 $t3=microtime(true);
 echo $t2-$t1 . "sec<BR>\n";
 echo $t3-$t2 . "sec<BR>\n";
+$client = new Client('http://tttt-cacti.apps.example.com');
+$request = $client->newRequest('/q1.php');
+$response = $request->getResponse();
+echo $response->getParsedResponse();
 ?>
