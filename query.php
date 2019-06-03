@@ -42,6 +42,8 @@ function private_decrypt($encrypted_text)
     return $decrypted;
 }
 
+echo $ss . "<BR>\n";
+
 $t1 = microtime(true);
 // 將資料進行加密
 $r0 = $fullText;
