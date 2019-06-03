@@ -1,6 +1,6 @@
 <?php
 
-$ss = 10;
+$ss = $_GET["ss"] ? $_GET["ss"] : 10;
 
 echo "<BR>\n";
 $fullText = microtime();
