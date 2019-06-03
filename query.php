@@ -1,6 +1,6 @@
 <?php
 
-$ss = 1;
+$ss = 10;
 
 echo "<BR>\n";
 $fullText = microtime();
