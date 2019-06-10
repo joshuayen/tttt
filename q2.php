@@ -1,5 +1,7 @@
 <?php
 
+set_time_limit(120);
+
 $ss = $_GET["ss"] ? $_GET["ss"] : 10;
 
 echo "<BR>\n";
