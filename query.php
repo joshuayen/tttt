@@ -65,10 +65,10 @@ $t3 = microtime(true);
 //echo $t2 - $t1 . "sec<BR>\n";
 //echo $t3 - $t2 . "sec<BR>\n";
 
-//$ch = curl_init("http://tttt-cacti.apps.example.com/q1.php?ss=" . $ss);
-//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//curl_setopt($ch, CURLOPT_HEADER, 0);
-//$data = curl_exec($ch);
-//curl_close($ch);
-echo $data . "<BR>" . microtime(true);
+$ch = curl_init("http://ttt2/q1.php?ss=" . $ss);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+$data = curl_exec($ch);
+curl_close($ch);
+echo $data . "<BR>" . $_ENV["HOSTNAME"] . " " . microtime(true);
 ?>
