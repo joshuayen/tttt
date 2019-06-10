@@ -68,6 +68,7 @@ $t3 = microtime(true);
 $ch = curl_init("http://ttt2:8080/q2.php?ss=" . $ss);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, false);
 $data = curl_exec($ch);
 curl_close($ch);
 echo $data . "<BR>" . $_ENV["HOSTNAME"] . " " . microtime(true);
