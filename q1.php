@@ -1,8 +1,9 @@
 <?php
 
+set_time_limit(120);
+
 $ss = $_GET["ss"] ? $_GET["ss"] : 10;
 
-echo "<BR>\n";
 $fullText = microtime();
 // 設定公、私鑰檔名
 const PRIVATE_KEY = 'private_2048.key';
@@ -42,6 +43,8 @@ function private_decrypt($encrypted_text)
     return $decrypted;
 }
 
+//echo $ss . "<BR>\n";
+
 $t1 = microtime(true);
 // 將資料進行加密
 $r0 = $fullText;
@@ -64,10 +67,12 @@ $t3 = microtime(true);
 //echo $t2 - $t1 . "sec<BR>\n";
 //echo $t3 - $t2 . "sec<BR>\n";
 
-$ch = curl_init("http://tttt-cacti.apps.example.com/q2.php?ss=" . $ss);
+$ch = curl_init("http://ttt2:8080/q2.php?ss=" . $ss);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_PROXY, '');
+curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, false);
 $data = curl_exec($ch);
 curl_close($ch);
-echo $data . "<BR>" . microtime(true);
+echo $data . "<BR>" . $_ENV["HOSTNAME"] . " " . microtime(true);
 ?>
